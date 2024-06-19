@@ -1,0 +1,1 @@
+This web application predicts diabetes using an optimized machine learning algorithm selected from various options, and it is deployed using the Flask framework for efficient and interactive user access.
