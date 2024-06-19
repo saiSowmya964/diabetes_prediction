@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style>
+        body{
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            font-size: 25px;
+            color:#66FCF1;
+            background-color: #1F2833;
+            text-align: center;
+        }
+        #heading{
+            font-size: 80px;
+            text-align: center;
+            margin: 50px;
+        }
+        #para{
+            border: solid;
+            border-radius: 10px;
+            padding: 50px;
+            margin: 20px;
+        }
+        .box{
+            border: solid;
+            border-radius: 10px;
+            padding: 5px;
+            background-color: #1F2833;
+            border-color: #66FCF1;
+            color: #66FCF1;
+        }
+        #submit, #reset{
+            border: solid;
+            border-radius: 10px;
+            padding: 10px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            font-size: 20px;
+            color: #66FCF1;
+            background-color: #1F2833;
+            margin-top: 20px;
+        }
+        div{
+            border: solid;
+            border-radius: 10px;
+            display: inline-block;
+            padding: 20px;
+            color: #66FCF1;
+        }
+    </style>
+</head>
+<body>
+    <p id="heading">Diabetes<br>Prediction</p>
+    <p id="prediction_text">
+        {% if prediction_text %}
+            {{ prediction_text }}
+        {% endif %}
+    </p>
+    <form action="{{ url_for('predict')}}"method="post">
+        <p id="para">
+        Pregnanices: <input type="text" name="Pregnanices" class="box" required autofocus autocomplete="off"><br><br>
+        Glucose level: <input type="text" name="Glucose level" class="box" required autofocus autocomplete="off"><br><br>
+        Blood pressure: <input type="text" name="Blood pressure" class="box" required autofocus autocomplete="off"><br><br>
+        Skin thickness: <input type="text" name="skin thickness" class="box" required autofocus autocomplete="off"><br><br>
+        Insulin: <input type="text" name="Insulin" class="box" required autofocus autocomplete="off" placeholder=><br><br>
+        BMI: <input type="text" name="BMI" class="box" required autofocus autocomplete="off"><br><br>
+        Diabetes PF: <input type="text" name="Diabetes" class="box" required autofocus autocomplete="off"><br><br>
+        Age: <input type="text" name="age" class="box" required autofocus autocomplete="off"><br><br>
+        <input type="submit" value="Predict" id="submit">
+        <input type="reset" value="Reset" id="reset">
+        </p>
+    </form>
+</body>
+</html>
